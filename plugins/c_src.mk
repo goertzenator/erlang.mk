@@ -92,7 +92,7 @@ app:: $(C_SRC_OUTPUT)
 
 $(C_SRC_OUTPUT): $(C_OBJS) $(CPP_OBJS)
 	@mkdir -p $(dir $@)
-	$(ld_verbose) $(LDCC) $(LDFLAGS) -shared -o $@ $^
+	$(ld_verbose) $(LDCC) $(LDFLAGS) $(LDLIBS) -shared -o $@ $^
 
 %.o: %.c
 	$(cc_verbose) $(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
